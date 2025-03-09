@@ -6,18 +6,29 @@
     <title>Odin Landing Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles */
-        * {
+        :root {
+            --color-dark-bg: #1F2937;
+            --color-light-bg: #E5E7EB;
+            --color-accent: #3882F6;
+            --color-text: #F9FAF8;
+            --color-secondary-text: #E5E7EB;
+            --color-muted: #4b5563;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
         }
 
-        /* Header Styles */
+        body {
+            font-family: var(--font-family);
+        }
+
         .dark-bg {
-            background-color: #1F2937;
-            padding: 20px 0;
+            background-color: var(--color-dark-bg);
+            padding: 1.25rem 0;
         }
 
         nav {
@@ -29,34 +40,33 @@
         }
 
         .logo {
-            font-size: 24px;
-            color: #F9FAF8;
+            font-size: 1.5rem;
+            color: var(--color-text);
             font-weight: 900;
         }
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 2rem;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #E5E7EB;
-            font-size: 18px;
+            color: var(--color-secondary-text);
+            font-size: 1.125rem;
         }
 
-        /* Hero Section */
         .hero {
-            background-color: #1F2937;
-            padding: 100px 0;
+            background-color: var(--color-dark-bg);
+            padding: 6.25rem 0;
         }
 
         .hero-container {
             width: 80%;
             margin: 0 auto;
             display: flex;
-            gap: 48px;
+            gap: 3rem;
             align-items: center;
         }
 
@@ -67,79 +77,77 @@
         .hero-image {
             flex: 1;
             background-color: #6d747d;
-            height: 250px;
+            height: 15.625rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #E5E7EB;
+            color: var(--color-secondary-text);
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 3rem;
             font-weight: 900;
-            color: #F9FAF8;
-            margin-bottom: 8px;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
         }
 
         .hero p {
-            font-size: 18px;
-            color: #E5E7EB;
-            margin-bottom: 16px;
+            font-size: 1.125rem;
+            color: var(--color-secondary-text);
+            margin-bottom: 1rem;
         }
 
         .btn {
-            background-color: #3882F6;
-            color: white;
-            padding: 8px 36px;
-            border-radius: 8px;
+            background-color: var(--color-accent);
+            color: #fff;
+            padding: 0.5rem 2.25rem;
             border: none;
-            font-size: 18px;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
             font-weight: bold;
             cursor: pointer;
         }
 
-        /* Info Section */
         .info {
-            padding: 48px 0 96px;
+            padding: 3rem 0 6rem;
         }
 
         .info h2 {
             text-align: center;
-            font-size: 36px;
-            color: #1F2937;
+            font-size: 2.25rem;
+            color: var(--color-dark-bg);
             font-weight: 900;
-            margin-bottom: 48px;
+            margin-bottom: 3rem;
         }
 
         .cards-container {
             width: 80%;
             margin: 0 auto;
             display: flex;
-            gap: 48px;
+            gap: 3rem;
             justify-content: center;
         }
 
         .card {
-            width: 160px;
+            width: 10rem;
             text-align: center;
         }
 
         .card-image {
-            width: 160px;
-            height: 160px;
-            border: 4px solid #3882F6;
-            border-radius: 16px;
-            margin-bottom: 8px;
+            width: 10rem;
+            height: 10rem;
+            border: 0.25rem solid var(--color-accent);
+            border-radius: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .card p {
-            color: #4b5563;
+            color: var(--color-muted);
         }
 
-        /* Quote Section */
         .quote-section {
-            background-color: #E5E7EB;
-            padding: 96px 0;
+            background-color: var(--color-light-bg);
+            padding: 6rem 0;
         }
 
         .quote-container {
@@ -148,56 +156,54 @@
         }
 
         .quote-text {
-            font-size: 36px;
+            font-size: 2.25rem;
             font-style: italic;
-            color: #1F2937;
+            color: var(--color-dark-bg);
             font-weight: 300;
         }
 
         .quote-author {
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: bold;
             text-align: right;
-            margin-top: 16px;
+            margin-top: 1rem;
         }
 
-        /* CTA Section */
         .cta-section {
-            padding: 96px 0;
+            padding: 6rem 0;
         }
 
         .cta-container {
             width: 80%;
             margin: 0 auto;
-            background-color: #3882F6;
-            border-radius: 8px;
-            padding: 48px 96px;
+            background-color: var(--color-accent);
+            border-radius: 0.5rem;
+            padding: 3rem 6rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .cta-text h3 {
-            color: white;
-            font-size: 24px;
-            margin-bottom: 4px;
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
         }
 
         .cta-text p {
-            color: #E5E7EB;
+            color: var(--color-secondary-text);
         }
 
         .cta-btn {
-            border: 2px solid white;
+            border: 0.125rem solid #fff;
             background-color: transparent;
         }
 
-        /* Footer */
         footer {
-            background-color: #1F2937;
-            color: #E5E7EB;
+            background-color: var(--color-dark-bg);
+            color: var(--color-secondary-text);
             text-align: center;
-            padding: 36px 0;
+            padding: 2.25rem 0;
         }
     </style>
 </head>
